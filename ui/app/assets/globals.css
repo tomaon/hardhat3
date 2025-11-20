@@ -1,0 +1,331 @@
+:root {
+  /* --color-success: #10b981; -> emerald-500 */
+  /* --color-success-dark: #065f46; -> emerald-700 */
+  /* --color-error: #dc2626; -> red-600 */
+  /* --color-error-dark: #991b1b; -> red-700 */
+
+  --spacing-2xs: 0.5rem;
+  --spacing-xs: 0.75rem;
+  --spacing-base: 1rem;
+  /* --spacing-lg: 1.125rem; */
+  --spacing-xl: 1.25rem;
+  /* --spacing-2xl: 1.5rem; */
+
+  --transition-fast: 0.2s;
+  --transition-slow: 0.4s;
+
+  /* https://tailwindcss.com/docs/border-radius */
+  --radius-md: 0.375rem;
+  /* --radius-lg: 0.5rem; */
+  --radius-xl: 0.75rem;
+
+  /* https://tailwindcss.com/docs/colors */
+  /* --color-red-50: oklch(0.971 0.013 17.38); */
+  /* --color-red-100: oklch(0.936 0.032 17.717); */
+  /* --color-red-200: oklch(0.885 0.062 18.334); */
+  /* --color-red-300: oklch(0.808 0.114 19.571); */
+  /* --color-red-400: oklch(0.704 0.191 22.216); */
+  /* --color-red-500: oklch(0.637 0.237 25.331); */
+  --color-red-600: oklch(0.577 0.245 27.325); /* error */
+  /* --color-red-700: oklch(0.505 0.213 27.518); */
+  /* --color-red-800: oklch(0.444 0.177 26.899); */
+  /* --color-red-900: oklch(0.396 0.141 25.723); */
+  /* --color-red-950: oklch(0.258 0.092 26.042); */
+
+  /* --color-emerald-50: oklch(0.979 0.021 166.113); */
+  /* --color-emerald-100: oklch(0.95 0.052 163.051); */
+  /* --color-emerald-200: oklch(0.905 0.093 164.15); */
+  /* --color-emerald-300: oklch(0.845 0.143 164.978); */
+  /* --color-emerald-400: oklch(0.765 0.177 163.223); */
+  /* --color-emerald-500: oklch(0.696 0.17 162.48); */
+  /* --color-emerald-600: oklch(0.596 0.145 163.225); */
+  /* --color-emerald-700: oklch(0.508 0.118 165.612); */
+  /* --color-emerald-800: oklch(0.432 0.095 166.913); */
+  /* --color-emerald-900: oklch(0.378 0.077 168.94); */
+  /* --color-emerald-950: oklch(0.262 0.051 172.552); */
+
+  /* --color-blue-50: oklch(0.97 0.014 254.604); */
+  /* --color-blue-100: oklch(0.932 0.032 255.585); */
+  /* --color-blue-200: oklch(0.882 0.059 254.128); */
+  /* --color-blue-300: oklch(0.809 0.105 251.813); */
+  /* --color-blue-400: oklch(0.707 0.165 254.624); */
+  /* --color-blue-500: oklch(0.623 0.214 259.815); */
+  --color-blue-600: oklch(0.546 0.245 262.881); /* link */
+  /* --color-blue-700: oklch(0.488 0.243 264.376); */
+  --color-blue-800: oklch(0.424 0.199 265.638); /* link:hover */
+  /* --color-blue-900: oklch(0.379 0.146 265.522); */
+  /* --color-blue-950: oklch(0.282 0.091 267.935); */
+
+  --color-gray-50: oklch(0.985 0.002 247.839);
+  --color-gray-100: oklch(0.967 0.003 264.542);
+  --color-gray-200: oklch(0.928 0.006 264.531);
+  /* --color-gray-300: oklch(0.872 0.01 258.338); */
+  --color-gray-400: oklch(0.707 0.022 261.325);
+  /* --color-gray-500: oklch(0.551 0.027 264.364); */
+  /* --color-gray-600: oklch(0.446 0.03 256.802); */
+  /* --color-gray-700: oklch(0.373 0.034 259.733); */
+  /* --color-gray-800: oklch(0.278 0.033 256.848); */
+  /* --color-gray-900: oklch(0.21 0.034 264.665); */
+  --color-gray-950: oklch(0.13 0.028 261.692);
+
+  /* https://tailwindcss.com/docs/font-family */
+  --font-mono:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+
+  --font-sans:
+    ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+
+  /* https://tailwindcss.com/docs/font-size */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  /* --text-xl: 1.25rem; */
+
+  /* https://tailwindcss.com/docs/font-weight */
+  /* --font-normal: 400; */
+  --font-medium: 500;
+  --font-semibold: 600;
+}
+
+:not(dialog) {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100dvh;
+  overflow: hidden;
+  font-family: var(--font-sans);
+  background: var(--color-gray-100);
+  color: var(--color-gray-950);
+}
+
+#root {
+  display: grid;
+  grid-template-rows: auto auto 1fr var(--spacing-base);
+  grid-template-columns: repeat(2, var(--spacing-base) 1fr) var(--spacing-base);
+  height: 100%;
+
+  > header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    grid-row: 1;
+    grid-column: 1 / -1;
+    padding: var(--spacing-base);
+    border-bottom: 1px solid var(--color-gray-200);
+    background: var(--color-gray-50);
+
+    h1 {
+      font-size: var(--text-lg);
+      font-weight: var(--font-semibold);
+    }
+
+    input {
+      width: 20rem;
+      padding: var(--spacing-2xs) var(--spacing-xs);
+      border: 1px solid var(--color-gray-200);
+      border-radius: var(--radius-md);
+      font-size: var(--text-sm);
+      background: var(--color-gray-100);
+    }
+  }
+
+  > .error {
+    grid-row: 2;
+    grid-column: 2 / 5;
+    margin-top: var(--spacing-base);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-xl);
+    background: color-mix(in srgb, var(--color-red-600) 20%, transparent);
+    color: var(--color-red-600);
+    text-align: center;
+  }
+
+  > main {
+    display: contents;
+
+    > section {
+      grid-row: 3;
+      margin-top: var(--spacing-base);
+      border: 1px solid var(--color-gray-200);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      background: var(--color-gray-50);
+
+      &:first-child {
+        grid-column: 2;
+      }
+
+      &:last-child {
+        grid-column: 4;
+      }
+
+      > header {
+        padding: var(--spacing-base);
+        border-bottom: 1px solid var(--color-gray-200);
+
+        h2 {
+          font-size: var(--text-base);
+          font-weight: var(--font-medium);
+        }
+      }
+
+      > table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: var(--text-sm);
+
+        thead {
+          display: none;
+        }
+
+        tbody {
+          tr {
+            position: relative;
+            transition: transform var(--transition-fast) ease-out;
+
+            &::after {
+              content: "";
+              position: absolute;
+              inset: auto var(--spacing-base) 0;
+              height: 1px;
+              background: var(--color-gray-200);
+            }
+
+            &:hover {
+              background: var(--color-gray-100);
+            }
+
+            &:first-child {
+              animation: fade-in var(--transition-slow) ease-in;
+            }
+          }
+
+          td {
+            padding: var(--spacing-2xs);
+            vertical-align: middle;
+
+            &:first-child {
+              display: flex;
+              flex-direction: column;
+              gap: 6px;
+              padding-left: var(--spacing-base);
+
+              .datetime {
+                font-size: var(--text-xs);
+                color: var(--color-gray-400);
+              }
+            }
+
+            &:last-child {
+              padding-right: var(--spacing-base);
+            }
+
+            dl {
+              display: grid;
+              grid-template-columns: auto 1fr;
+              gap: 3px 6px;
+              align-items: baseline;
+
+              dt {
+                color: var(--color-gray-400);
+                font-size: var(--text-xs);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  > dialog {
+    padding: 0;
+    border: none;
+    border-radius: var(--radius-xl);
+    outline: none;
+    background: var(--color-gray-50);
+
+    form {
+      display: grid;
+      grid-template-rows: auto 1fr;
+
+      header {
+        display: flex;
+        align-items: baseline;
+        gap: var(--spacing-2xs);
+        grid-row: 1;
+        padding: var(--spacing-base);
+        border-bottom: 1px solid var(--color-gray-200);
+
+        h2 {
+          font-size: var(--text-base);
+          font-weight: var(--font-medium);
+        }
+
+        h3 {
+          font-size: var(--text-xs);
+          font-weight: var(--font-normal);
+        }
+      }
+
+      .error {
+        grid-row: 2;
+        margin: var(--spacing-xl);
+        color: var(--color-red-600);
+        text-align: center;
+      }
+
+      dl {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-2xs);
+        grid-row: 2;
+        max-width: 80dvw;
+        max-height: 80dvh;
+        overflow: scroll;
+        padding: var(--spacing-base);
+      }
+    }
+  }
+
+  a {
+    font-family: var(--font-mono);
+    color: var(--color-blue-600);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--color-blue-800);
+    }
+  }
+
+  .datetime {
+    font-family: var(--font-mono);
+  }
+
+  .number {
+    font-family: var(--font-mono);
+    text-align: right;
+  }
+
+  .pending {
+    max-width: 66ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-style: italic;
+    color: var(--color-gray-400);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

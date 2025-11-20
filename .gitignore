@@ -1,0 +1,12 @@
+node_modules/
+
+artifacts/
+cache/
+coverage/
+dist/
+ignition/deployments/
+types/
+
+.env
+
+!Makefile

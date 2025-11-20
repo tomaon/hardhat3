@@ -1,0 +1,42 @@
+{
+  "name": "hardhat3",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "node": "hardhat node",
+    "build": "hardhat build",
+    "test": "hardhat test nodejs --coverage --gas-stats",
+    "dev": "vite",
+    "lint": "vue-tsc --noEmit && eslint ignition scripts tasks tests ui",
+    "format": "prettier -w ignition scripts tasks tests ui"
+  },
+  "dependencies": {
+    "globals": "^17.6.0",
+    "hardhat": "^3.7.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@nomicfoundation/hardhat-ignition": "^3.1.6",
+    "@nomicfoundation/hardhat-toolbox-viem": "^5.0.6",
+    "@openzeppelin/contracts": "^5.6.1",
+    "@types/node": "^24",
+    "@vitejs/plugin-vue": "^6.0.7",
+    "eslint": "^10.4.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-vue": "^10.9.1",
+    "prettier": "^3.8.3",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.60.1",
+    "viem": "^2.52.0",
+    "vite": "^8.0.16",
+    "vue": "^3.5.35",
+    "vue-tsc": "^3.3.3"
+  },
+  "engines": {
+    "node": "^24"
+  },
+  "volta": {
+    "node": "24.16.0"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "version": "0.2",
+  "words": [
+    "closedby",
+    "keccak",
+    "multicall",
+    "nodenext",
+    "viem"
+  ],
+  "ignorePaths": [
+    "artifacts/**",
+    "cache/**",
+    "coverage/**",
+    "Dockerfile",
+    "node_modules/**",
+    "package-lock.json",
+    "package.json"
+  ]
+}
